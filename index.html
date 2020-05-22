@@ -4,11 +4,12 @@
         <meta charset="utf-8">
         <title>Group 2</title>
         <!-- Latest compiled and minified CSS -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" rel="stylesheet" >
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
-        <div class="row container-fluid" style="padding:0 50px;">
+        <div id="app" class="row container-fluid" style="padding:0 50px;">
             <div class="xs-col-12">
                 <h1>Countrymation</h1>
                 <h2>Search for a country</h2>
@@ -24,11 +25,13 @@
             
                 <button id="search-btn" class="btn btn-success">Search</button>
                 <hr>
-                <div id="container-country" class="container-contries"></div>
+                <div id="container-country" class="container-contries">
+                    <h2>{{ country }}</h2>
+                </div>
 
             </div>
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
         <script src="script.js"></script>
     </body>
 </html>
