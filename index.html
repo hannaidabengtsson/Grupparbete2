@@ -18,20 +18,41 @@
                 <div>
                     <form>
                         <label for="search">Search for country here:</label><br>
-                        <input type="text" id="search" name="search"><br>
+                        <input v-model="search" type="text" id="search-input" name="search"><br>
                     </form>  
                 </div>
                 <br>
             
                 <button id="search-btn" class="btn btn-success">Search</button>
                 <hr>
-                <div id="container-country" class="container-contries">
-                    <h2>{{ country }}</h2>
-                </div>
+                <table>
+                    <tr>
+                        <th>Country</th>
+                        <th>Capital</th>
+                        <th>Population</th>
+                    </tr>
+                    <tr v-for="country in countries">
+                        <td>
+                            <img v-bind:src="country.flag" alt="Flag" height="26" width="42">
+                            {{ country.name }}
+                        </td>
+                        <td>{{ country.capital }}</td>
+                        <td>{{ country.population }}</td>
+                    </tr>
+                    <tr v-if="countries.length == 0">
+                        <td colspan="3">
+                            No countries found, search for a new one!
+                        </td>
+                    </tr>
+                </table>
 
             </div>
         </div>
+        <!--Load vue-->
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <!--Load axios-->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <!--Load script file-->
         <script src="script.js"></script>
     </body>
 </html>
