@@ -15,15 +15,15 @@
                 <h2>Search for a country</h2>
                 <hr>
           
-                <div>
+                <div id ="search-div">
                     <form>
-                        <label for="search">Search for country here:</label><br>
-                        <input v-model="search" type="text" id="search-input" name="search"><br>
+                        <label for="searchInput">Search for country here:</label><br>
+                        <input v-model="searchInput" id="searchInput" type="text"  name="searchInput"/>
+                        <br>
                     </form>  
                 </div>
                 <br>
-            
-                <button id="search-btn" class="btn btn-success">Search</button>
+                <button v-on:click="searchBtn" class="btn btn-success">Search</button>         
                 <hr>
                 <table>
                     <tr>

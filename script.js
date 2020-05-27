@@ -1,28 +1,22 @@
 var app = new Vue({
-    el: '#app', 
+    el: '#app',
     data: {
         countries: [],
-        search: ''
+        searchInput: ''
     },
 
-    computed:{
-        countries: function() {
-        return this.country.filter((x) => {
-            return x.title.match(this.search)
-        });
-    }
-    },
-
-    mounted() {
-        axios
-            .get('https://restcountries.eu/rest/v2/all')
-            .then(response => (
-                this.countries = response.data
+    methods: {
+        searchBtn: function (event) {
+            axios
+                .get(`https://restcountries.eu/rest/v2/name/${this.searchInput}`)
+                .then(response => (
+                    this.countries = response.data
                 ))
-            .catch(error => (
-                console.log(error)
-            ));
+                .catch(error => (
+                    console.log(error)
+                ));
+            },
     }
+});
 
-})
 
