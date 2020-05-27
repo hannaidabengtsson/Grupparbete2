@@ -1,58 +1,57 @@
 <!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Group 2</title>
-        <!-- Latest compiled and minified CSS -->
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" rel="stylesheet" >
-        <link href="style.css" rel="stylesheet">
-    </head>
-    <body>
-        <div id="app" class="row container-fluid" style="padding:0 50px;">
-            <div class="xs-col-12">
-                <h1>Countrymation</h1>
-                <h2>Search for a country</h2>
-                <hr>
-          
-                <div>
-                    <form>
-                        <label for="search">Search for country here:</label><br>
-                        <input v-model="search" type="text" id="search-input" name="search"><br>
-                    </form>  
-                </div>
-                <br>
-            
-                <button id="search-btn" class="btn btn-success">Search</button>
-                <hr>
-                <table>
-                    <tr>
-                        <th>Country</th>
-                        <th>Capital</th>
-                        <th>Population</th>
-                    </tr>
-                    <tr v-for="country in countries">
-                        <td>
-                            <img v-bind:src="country.flag" alt="Flag" height="26" width="42">
-                            {{ country.name }}
-                        </td>
-                        <td>{{ country.capital }}</td>
-                        <td>{{ country.population }}</td>
-                    </tr>
-                    <tr v-if="countries.length == 0">
-                        <td colspan="3">
-                            No countries found, search for a new one!
-                        </td>
-                    </tr>
-                </table>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Hanna-Petra-Elin</title>
+  </head>
+  <body>
 
+    <!-- CLASS FÖR HELA INNEHÅLLET (container my-container)-->
+    <div class="container my-container">
+        
+
+      <!-- HEADER -->
+        <div class="row my-row1">
+            <div class="col my-col">
+              <h1>Gruppuppgift webbtekniker</h1>
             </div>
         </div>
-        <!--Load vue-->
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-        <!--Load axios-->
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <!--Load script file-->
-        <script src="script.js"></script>
-    </body>
+
+        <!-- INNEHÅLL -->
+        <br>
+        <h2>Sök land:</h2>
+        <div class="row my-row2">
+          <div class="col my-col">
+            <form class="form-inline mr-auto">
+              <input class="form-control mr-sm-2" type="text" aria-label="Search">
+              <button class="btn btn-outline-success btn-rounded btn-sm my-0" type="submit">Sök</button>
+            </form>
+          </div>
+          <div>
+            <br>
+            <p>Här ska innehållet på de man sökt presenteras</p>
+          </div>
+        </div>
+
+
+        <!-- SIDFOT -->
+        <div class="row my-row3">
+          <div class="col my-col">
+            <div><p>Petra Svensson</p></div>
+            <div><p>Hanna Bengtsson</p></div>
+            <div><p>Elin Andersson</p></div>
+          </div>
+        </div>
+
+        
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
 </html>
