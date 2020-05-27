@@ -26,10 +26,12 @@
                 <button v-on:click="searchBtn" class="btn btn-success">Search</button>         
                 <hr>
                 <table>
-                    <tr>
+                    <tr v-if="countries.length != 0">
                         <th>Country</th>
                         <th>Capital</th>
+                        <th>Region</th>
                         <th>Population</th>
+                        <th>Area</th>
                     </tr>
                     <tr v-for="country in countries">
                         <td>
@@ -37,12 +39,9 @@
                             {{ country.name }}
                         </td>
                         <td>{{ country.capital }}</td>
+                        <td>{{ country.region }}</td>
                         <td>{{ country.population }}</td>
-                    </tr>
-                    <tr v-if="countries.length == 0">
-                        <td colspan="3">
-                            No countries found, search for a new one!
-                        </td>
+                        <td>{{ country.area }}</td>
                     </tr>
                 </table>
 
