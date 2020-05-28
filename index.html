@@ -1,61 +1,92 @@
 <!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Group 2</title>
-        <!-- Latest compiled and minified CSS -->
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" rel="stylesheet" >
-        <link href="style.css" rel="stylesheet">
-    </head>
-    <body>
-        <div id="app" class="row container-fluid" style="padding:0 50px;">
-            <div class="xs-col-12">
-                <h1>Countrymation</h1>
-                <h2>Search for a country</h2>
-                <hr>
-          
-                <div id ="search-div">
-                    <form>
-                        <label for="searchInput">Search for country here:</label><br>
-                        <input v-model="searchInput" id="searchInput" type="text"  name="searchInput"/>
-                        <br>
-                    </form>  
-                </div>
-                <br>
-                <button v-on:click="searchBtn" class="btn btn-success">Search</button>         
-                <hr>
-                <h3>Dina senasrte sökningar:</h3>
-                <ul>
-                    <li v-for="searchWord in recentSearches">{{ searchWord }}</li>
-                </ul>
-                <table>
-                    <tr v-if="countries.length != 0">
-                        <th>Country</th>
-                        <th>Capital</th>
-                        <th>Region</th>
-                        <th>Population</th>
-                        <th>Area</th>
-                    </tr>
-                    <tr v-for="country in countries">
-                        <td>
-                            <img v-bind:src="country.flag" alt="Flag" height="26" width="42">
-                            {{ country.name }}
-                        </td>
-                        <td>{{ country.capital }}</td>
-                        <td>{{ country.region }}</td>
-                        <td>{{ country.population }}</td>
-                        <td>{{ country.area }}</td>
-                    </tr>
-                </table>
+<html lang="en">
 
-            </div>
+<head>
+  <meta charset="utf-8">
+  <title>Group 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"
+    rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <title>Hanna-Petra-Elin</title>
+</head>
+
+<body>
+
+  <!-- CLASS FÖR HELA INNEHÅLLET (container my-container)-->
+  <div class="container my-container" id="app">
+
+    <!-- HEADER -->
+    <div class="row my-row1">
+      <div class="col my-col-0">
+        <h1>Countrymation</h1>
+      </div>
+    </div>
+
+    <!-- INNEHÅLL -->
+    <br>
+    <div class="row my-row2">
+      <div class="col my-col" id="search-div">
+        <form>
+          <label for="searchInput">Search for country here:</label><br>
+          <input v-model="searchInput" id="searchInput" type="text" name="searchInput" />
+          <br>
+          <br>
+          <br>
+        </form>
+      </div>
+    </div>
+
+    <button v-on:click="searchBtn" class="btn btn-success">Search</button>
+    <h3>Dina senasrte sökningar:</h3>
+        <ul>
+          <li v-for="searchWord in recentSearches">{{ searchWord }}</li>
+        </ul>
+
+    <div class="row my-row3">
+      <div class="col my-col">
+        <table>
+          <tr v-if="countries.length != 0">
+            <th>Country</th>
+            <th>Capital</th>
+            <th>Region</th>
+            <th>Population</th>
+            <th>Area</th>
+          </tr>
+          <tr v-for="country in countries">
+            <td><img v-bind:src="country.flag" alt="Flag" height="26" width="42">{{ country.name }}</td>
+            <td>{{ country.capital }}</td>
+            <td>{{ country.region }}</td>
+            <td>{{ country.population }}</td>
+            <td>{{ country.area }}</td>
+          </tr>
+        </table>
+
+      </div>
+    </div>
+
+    <!-- SIDFOT -->
+    <div class="row my-row4">
+      <div class="col my-col">
+        <div>
+          <p>Petra Svensson</p>
         </div>
-        <!--Load vue-->
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-        <!--Load axios-->
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <!--Load script file-->
-        <script src="script.js"></script>
-    </body>
+        <div>
+          <p>Hanna Bengtsson</p>
+        </div>
+        <div>
+          <p>Elin Andersson</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SCRIPT -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>

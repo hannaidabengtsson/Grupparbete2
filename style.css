@@ -1,6 +1,99 @@
+body {
+    padding-top: 10px;
+    margin: 10px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 25px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
 td {
     border: 1px solid black;
     border-collapse: collapse; 
     padding: 10px; 
     margin: 10px;
 }
+
+.my-col {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 20px;
+}
+
+#app {
+    text-align: center;
+}
+
+                /*MY ROWS*/
+/*header*/
+.my-row1 {
+    height: 80px;
+    background-color: rgb(70, 69, 69);
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-top: 5px;
+    box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.55);
+}
+
+/*innehåll*/
+.my-row2 {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    padding-bottom: 5px;
+}
+
+.my-row3 {
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+/*sidfot*/
+.my-row4 {
+    height: auto;
+    color: white;
+    background-color: rgb(123, 122, 122);
+    padding-top: 10px;
+    box-shadow: 0px 0px 2px 1px rgb(155, 155, 155);
+    text-align: center;
+}
+
+
+                /* MEDIA QUERIES */
+
+/* Mobile */
+@media (max-width: 480px) {
+    .my-row2 {
+        flex-direction: column;
+    }
+    .my-col {
+        flex-direction: column;
+    }
+    td {
+        display: flex;
+        flex-direction: column;
+    }
+    th {
+        display: flex;
+        flex-direction: column;
+    }
+    tr {
+        flex-direction: row;
+    }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+
+
+/* Desktop */
+@media (min-width: 1200px) {
+
+}
+
