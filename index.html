@@ -39,8 +39,8 @@
     </div>
 
     <button v-on:click="searchBtn" class="btn btn-success">Search</button>
-    <h3>Dina senasrte sökningar:</h3>
-        <ul>
+    <h3>Last searched countries:</h3>
+        <ul id="dot">
           <li v-for="searchWord in recentSearches">{{ searchWord }}</li>
         </ul>
 
