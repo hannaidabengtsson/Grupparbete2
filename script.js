@@ -1,8 +1,9 @@
+
 var app = new Vue({
     el: '#app',
     data: {
         countries: [],
-        searchInput: ''
+        searchInput: '',   
     },
 
     methods: {
@@ -19,8 +20,15 @@ var app = new Vue({
                 .catch(error => (
                     alert("Couldn´t find the country you searched for!")
                 ));
-            },
+        }
+    },
+
+    mounted() {
+        console.log('App mounted!');
+        if (localStorage.getItem('searchInput')) this.countries = 
+    JSON.parse(localstorage.getItem('searchInput'));
     }
+
 });
 
 
