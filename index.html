@@ -41,7 +41,7 @@
     <button v-on:click="searchBtn" class="btn btn-success">Search</button>
     <h3>Last searched countries:</h3>
         <ul id="dot">
-          <li v-for="searchWord in recentSearches">{{ searchWord }}</li>
+          <button id="list-buttons" v-on:click="searchRecentSearches"  v-for="searchWord in recentSearches">{{ searchWord }}</button>
         </ul>
 
     <div class="row my-row3">
