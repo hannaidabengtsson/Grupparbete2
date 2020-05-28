@@ -41,7 +41,9 @@
     <button v-on:click="searchBtn" class="btn btn-success">Search</button>
     <h3>Dina senasrte sökningar:</h3>
         <ul>
-          <li v-for="searchWord in recentSearches">{{ searchWord }}</li>
+          <li v-for="searchWord in recentSearches"> 
+              {{ searchWord }} <button @click="searchRecentSearches(searchWord)"></button>
+            </li> 
         </ul>
 
     <div class="row my-row3">

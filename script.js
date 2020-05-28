@@ -40,6 +40,21 @@ var app = new Vue({
                 localStorage.setItem("recentSearches", json);
             }
         },
+
+        searchRecentSearches: function(searchWord) {
+            return searchWord.status= true; 
+        },
+
+            /*var clickedElement = e.target;
+            for(let i = 0; i < recentSearches.length; i++){
+                if (clickedElement = recentSearches[i] ){
+                recentSearches.push([countries]); 
+                }
+            }
+            
+
+        }
+        */
     },
 
     mounted() {
@@ -47,7 +62,9 @@ var app = new Vue({
         if (localStorage.getItem('recentSearches')) {
             this.recentSearches = JSON.parse(localStorage.getItem('recentSearches'));
         }
-    }
+    },
+
+
 });
 
 
