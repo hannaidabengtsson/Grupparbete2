@@ -41,13 +41,6 @@ var app = new Vue({
             }
         },
 
-        mounted() {
-            console.log('App mounted!');
-            if (localStorage.getItem('recentSearches')) {
-                this.recentSearches = JSON.parse(localStorage.getItem('recentSearches'));
-            }
-        },
-
         searchRecentSearches: function(event) {
             console.log(event.target.innerText);
             var selectedBtn = event.target.innerText;
@@ -58,7 +51,14 @@ var app = new Vue({
                 })
             }
 
-        }
+        },
+
+        mounted() {
+            console.log('App mounted!');
+            if (localStorage.getItem('recentSearches')) {
+                this.recentSearches = JSON.parse(localStorage.getItem('recentSearches'));
+            }
+        },
         
 });
 
