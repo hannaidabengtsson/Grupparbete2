@@ -3,7 +3,7 @@ var app = new Vue({
     data: {
         countries: [],
         searchInput: '',
-        recentSearches: []   
+        recentSearches: []
     },
 
     methods: {
@@ -40,30 +40,25 @@ var app = new Vue({
             }
         },
 
-        searchRecentSearches: function(searchWord) {
-            return searchWord.status= true; 
+        searchRecentSearches: function(event) {
+            console.log(event.target.innerText);
+            var selectedBtn = event.target.innerText;
+            axios
+                .get(`https://restcountries.eu/rest/v2/name/${selectedBtn}`)
+                .then(response => {
+                    this.countries = response.data;
+                })
+            }
+
         },
 
-            /*var clickedElement = e.target;
-            for(let i = 0; i < recentSearches.length; i++){
-                if (clickedElement = recentSearches[i] ){
-                recentSearches.push([countries]); 
-                }
+        mounted() {
+            console.log('App mounted!');
+            if (localStorage.getItem('recentSearches')) {
+                this.recentSearches = JSON.parse(localStorage.getItem('recentSearches'));
             }
-            
-
-        }
-        */
-    },
-
-    mounted() {
-        console.log('App mounted!');
-        if (localStorage.getItem('recentSearches')) {
-            this.recentSearches = JSON.parse(localStorage.getItem('recentSearches'));
-        }
-    },
-
-
+        },
+        
 });
 
 

@@ -31,7 +31,7 @@ td {
     justify-content: center;
 }
 
-li {
+#list-buttons {
     border: 1px black solid;
     padding: 3px;
     margin: 8px;
