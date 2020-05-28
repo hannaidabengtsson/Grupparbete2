@@ -52,6 +52,9 @@ li:hover {
     justify-content: space-evenly;
     padding-top: 20px;
 }
+#searchInput{
+    margin:20px;
+}
 
 #app {
     text-align: center;

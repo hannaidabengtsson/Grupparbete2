@@ -32,13 +32,13 @@
           <label for="searchInput">Search for country here:</label><br>
           <input v-model="searchInput" id="searchInput" type="text" name="searchInput" />
           <br>
-          <br>
-          <br>
         </form>
       </div>
     </div>
 
     <button v-on:click="searchBtn" class="btn btn-success">Search</button>
+    <hr>
+    <br>
     <h3>Last searched countries:</h3>
         <ul id="dot">
           <button id="list-buttons" v-on:click="searchRecentSearches"  v-for="searchWord in recentSearches">{{ searchWord }}</button>
