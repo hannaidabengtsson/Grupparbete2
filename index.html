@@ -39,11 +39,17 @@
     </div>
 
     <button v-on:click="searchBtn" class="btn btn-success">Search</button>
+<<<<<<< HEAD
     <h3>Dina senasrte sökningar:</h3>
         <ul>
           <li v-for="searchWord in recentSearches"> 
               {{ searchWord }} <button @click="searchRecentSearches(searchWord)"></button>
             </li> 
+=======
+    <h3>Last searched countries:</h3>
+        <ul id="dot">
+          <li v-for="searchWord in recentSearches">{{ searchWord }}</li>
+>>>>>>> 160874cfc287cedd7a4fd39a169a9bd67e0b4d50
         </ul>
 
     <div class="row my-row3">
