@@ -3,7 +3,8 @@ var app = new Vue({
     el: '#app',
     data: {
         countries: [],
-        searchInput: '',   
+        searchInput: '',
+        recentSearches: []   
     },
 
     methods: {
@@ -14,21 +15,39 @@ var app = new Vue({
             }
             axios
                 .get(`https://restcountries.eu/rest/v2/name/${this.searchInput}`)
-                .then(response => (
-                    this.countries = response.data
-                ))
-                .catch(error => (
+                .then(response => {
+                    this.countries = response.data;
+                    this.updateStorage(this.searchInput);
+                })
+                .catch(error => {
                     alert("Couldn´t find the country you searched for!")
-                ));
-        }
+                });
+        },
+
+        updateStorage: function (searchWord){
+            if (localStorage.getItem('recentSearches')) {
+                let recentSearches = JSON.parse(localStorage.getItem('recentSearches'))
+                recentSearches.push(searchWord);
+                if (recentSearches.length > 3 ) {
+                    recentSearches.shift();
+                } 
+                this.recentSearches = recentSearches
+                let json = JSON.stringify(recentSearches);
+                localStorage.setItem("recentSearches", json);
+            }else{
+                this.recentSearches = [searchWord]
+                let json = JSON.stringify([searchWord]);
+                localStorage.setItem("recentSearches", json);
+            }
+        },
     },
 
     mounted() {
         console.log('App mounted!');
-        if (localStorage.getItem('searchInput')) this.countries = 
-    JSON.parse(localstorage.getItem('searchInput'));
+        if (localStorage.getItem('recentSearches')) {
+            this.recentSearches = JSON.parse(localStorage.getItem('recentSearches'));
+        }
     }
-
 });
 
 
