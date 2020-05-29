@@ -6,7 +6,7 @@ body {
 /*Rubriker*/
 h1 {
     text-align: center;
-    font-size: 25px;
+    font-size: 40px;
 }
 
 h2 {
@@ -17,11 +17,25 @@ h3 {
     font-size: 16px;
 }
 
+label {
+    font-size: xx-large;
+    font-weight: 300;
+}
+
+img{
+    padding: 5px;
+}
+
+th{
+    padding: 20px;
+    margin: 25px 0;
+}
+
 td {
     border: 1px solid black;
     border-collapse: collapse; 
-    padding: 10px; 
-    margin: 10px;
+    padding: 20px; 
+    margin: 20px;
 }
 
 #dot {
@@ -37,9 +51,7 @@ td {
     margin: 8px;
     border-radius: 3px;
     width: 70px;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
-    color: white;
+    border-color: black;
     
 }
 
@@ -125,6 +137,7 @@ li:hover {
 
 /* Tablet */
 @media (max-width: 790px) {
+
 
 }
 
