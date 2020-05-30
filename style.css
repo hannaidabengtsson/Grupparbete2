@@ -120,12 +120,17 @@ li:hover {
     td {
         display: flex;
         flex-direction: column;
-        width: 200px;
+        width: auto;
+        padding: 4px;
+        padding-bottom: 15px;
+
     }
     th {
         display: flex;
         flex-direction: column;
-        padding: 19px;
+        padding-bottom: 0px;
+        padding-left: 5px;
+        padding-right: 0px;
     }
     tbody {
         display: flex;
