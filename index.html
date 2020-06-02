@@ -39,7 +39,7 @@
     <button v-on:click="searchBtn" class="btn btn-success">Search</button>
     <hr>
     <br>
-    <h3>Your last searched countries:</h3>
+    <h3>Your recent searches:</h3>
         <ul id="dot">
           <button id="list-buttons" v-on:click="searchRecentSearches"  v-for="searchWord in recentSearches">{{ searchWord }}</button>
         </ul>
