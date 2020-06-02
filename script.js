@@ -39,6 +39,7 @@ var app = new Vue({
                 localStorage.setItem("recentSearches", json);
             }
         },
+        
 
         searchRecentSearches: function(event) {
             console.log(event.target.innerText);
@@ -53,7 +54,6 @@ var app = new Vue({
         },
 
         mounted() {
-            console.log('App mounted!');
             if (localStorage.getItem('recentSearches')) {
                 this.recentSearches = JSON.parse(localStorage.getItem('recentSearches'));
             }
