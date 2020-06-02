@@ -24,6 +24,7 @@ label {
 
 img{
     padding: 5px;
+    align-items: center;
 }
 
 th{
@@ -47,12 +48,11 @@ td {
 
 #list-buttons {
     border: 1px black solid;
-    padding: 3px;
+    padding: 5px;
     margin: 8px;
     border-radius: 3px;
-    width: 70px;
     border-color: black;
-    
+    width: 90px;
 }
 
 li:hover {
@@ -119,12 +119,12 @@ li:hover {
     }
     td {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         width: auto;
-        padding: 4px;
+        padding: 10px;
         padding-bottom: 15px;
-        padding-left: 50px;
-        padding-right: 50px;
+        padding-right: 40px;
+        text-align: left;
 
     }
     th {
@@ -139,15 +139,3 @@ li:hover {
         flex-direction: row;
     }
 }
-
-/* Tablet */
-@media (max-width: 790px) {
-
-
-}
-
-/* Desktop */
-@media (min-width: 1200px) {
-
-}
-
