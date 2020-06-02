@@ -119,12 +119,12 @@ li:hover {
     }
     td {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         width: auto;
-        padding: 4px;
+        padding: 10px;
         padding-bottom: 15px;
-        padding-left: 50px;
-        padding-right: 50px;
+        padding-left: 60px;
+        padding-right: 40px;
 
     }
     th {
