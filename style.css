@@ -123,6 +123,8 @@ li:hover {
         width: auto;
         padding: 4px;
         padding-bottom: 15px;
+        padding-left: 50px;
+        padding-right: 50px;
 
     }
     th {
@@ -135,8 +137,6 @@ li:hover {
     tbody {
         display: flex;
         flex-direction: row;
-        justify-content: center;
-        padding-right: 100px;
     }
 }
 
